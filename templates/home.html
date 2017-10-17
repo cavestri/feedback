@@ -1,0 +1,56 @@
+<!--
+MIT License
+
+Copyright (c) 2017 Franco Cavestri
+
+https://github.com/cavestri/feedback
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+{% extends "layout.html" %}
+{% block body %}
+<div class="container">
+
+    <ul id="bubbles">
+        <li class="like" title="Likes received."><span>0</span> <span>likes</span></li>
+        <li class="dislike" title="Dislikes received."><span>0</span> <span>dislikes</span></li>
+        <li class="issue" title="Issues received."><span>0</span> <span>issues</span></li>
+    </ul>
+
+    <div id="table-filter">
+        <select id="type" title="Select feedback type">
+            <option value="like">LIKE</option>
+            <option value="dislike">DISLIKE</option>
+            <option value="issue">ISSUE</option>
+            <option value="all" selected>ALL</option>
+        </select>
+        <select id="range" title="Select time range">
+            <option value="today">TODAY</option>
+            <option value="week">WEEK</option>
+            <option value="month">MONTH</option>
+            <option value="all" selected>ALL</option>
+        </select>
+        <button id="submit-filter" title="Get selection">GO!</button>
+    </div>
+        <table id="feedback_table">
+        <tbody>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
